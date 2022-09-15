@@ -33,7 +33,7 @@ app.post('/add', (req, res) => {
     } )
 })
 
-app.delete('/delete', (req, res) => {
+app.post('/delete', (req, res) => {
     ToDo.findByIdAndDelete(req.body.id, (err, doc) => {
         if(err) return err;
         res.status(200).json({ msg: `${doc} was deleted` })
